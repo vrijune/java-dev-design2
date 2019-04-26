@@ -9,7 +9,7 @@ In this exercise, we’ll once again be extending the Bounce application. This t
 In designing the revised class structure, you must **guarantee** that if a shape is associated with text it will **always** be painted. This responsibility should not be left to developers of Shape subclasses. To elaborate, consider the intention to make your Shape class hierarchy available – only the bytecode and not the source files – to other developers. The above guarantee should hold for any Shape subclasses added by other developers in the future. Note that since such developers will not have the source code for your class hierarchy they cannot edit your classes; all they can do is extend the classes that you provide.
 When this exercise is complete, your program should produce output similar to Figure 1 below:
 
-![](lab16ex01img1.png)
+![](lab16ex01img1.PNG)
 
 Figure 1: Screenshot showing text added to several different types of Shapes.
 
@@ -34,7 +34,7 @@ Remember that this **paint(…)** method contains a method contract which we wan
 ## Exercise Two: Modelling & Wiring a Model View Application
 The objective of this exercise is to complete a Model View application that displays student results. We can see a screenshot of the result in Figure 2 below:
 
-![](lab16ex01img2.png)
+![](lab16ex02img1.PNG)
 
 Figure 2: Screenshot showing a student results viewer app creating using MVC principles.
 
