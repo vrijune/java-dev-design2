@@ -57,7 +57,7 @@ Contains class **CourseDataManager**, which is used to generate and write **Stud
 This package contains the **Main** application program plus the view classes. **DistributionPanel** and **StatisticsPanel** represent the bar-chart and statistics views respectively. The tabular view is represented by a standard Swing **JTable** component.
 
 `model`
-The model package includes the classes that represent the application model:**Course** and **StudentResult**. A **Course** instance is essentially an aggregate of **StudentResult** objects. A **Course additionally holds a reference to an **AssessmentPolicy** object. Each **StudentResult** object stores result data relating to an individual student. Finally, class **Course** allows **CourseListeners** to be registered with a **Course** instance. Whenever a **Course**’s state changes, the Course notifies any registered listeners. The **CourseListener** interface is defined in this package.
+The model package includes the classes that represent the application model: **Course** and **StudentResult**. A Course instance is essentially an aggregate of StudentResult objects. A Course additionally holds a reference to an AssessmentPolicy object. Each StudentResult object stores result data relating to an individual student. Finally, class Course allows CourseListeners to be registered with a Course instance. Whenever a Course’s state changes, the Course notifies any registered listeners. The **CourseListener** interface is defined in this package.
 
 `policy`
 This package contains an **AssessmentPolicy** interface and a number of implementations that differ in how they calculate a student’s overall mark. In addition, this package contains class **AssessmentPolicyStore**, which essentially serves as an aggregate of **AssessmentPolicy** objects.
@@ -65,14 +65,14 @@ This package contains an **AssessmentPolicy** interface and a number of implemen
 ### Completing the exercise
 Completing this exercise involves writing adapter classes and wiring up the model and views via adapter instances. In particular, you should create three new adapter classes:
 
-`**DistributionPanelAdapter** in the gui package:`
+`DistributionPanelAdapter in the gui package:`
 The role of this adapter is to allow the **DistributionPanel** view to be registered with the Course model and notified whenever the Course object changes its state (e.g. whenever the overall marks for its StudentResult objects change).  The adapter should ensure that the DistributionPanel is repainted.
 
-`**StatisticsPanelAdapter** in the gui package:`
-This adapter has a similar role to DistributionPanelAdapter, but is concerned with allowing the Course model to notify the StatisticsPanel view when the Course changes.
+`StatisticsPanelAdapter in the gui package:`
+This adapter has a similar role to **DistributionPanelAdapter**, but is concerned with allowing the Course model to notify the StatisticsPanel view when the Course changes.
 
-`**CourseAdapter** in the model package:`
-This class allows the Course model to be visualized using a regular Swing JTable component. Whenever the Course model changes, the adapter should ensure that the JTable view is updated.
+`CourseAdapter in the model package:`
+This class allows the Course model to be visualized using a regular Swing **JTable** component. Whenever the Course model changes, the adapter should ensure that the JTable view is updated.
 
 In addition to implementing the above three classes, instances of the classes should be created and connected. You should change class **gui.Main** in its constructor – only where indicated in the source file. No further changes are necessary when conforming to the used patterns.
 
