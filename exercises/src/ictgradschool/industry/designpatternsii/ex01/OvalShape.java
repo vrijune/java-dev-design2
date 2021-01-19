@@ -46,7 +46,7 @@ public class OvalShape extends Shape {
 	 * Paints this OvalShape object using the supplied Painter object.
 	 */
 	@Override
-	public void paint(Painter painter) {
+	public void paintShape(Painter painter) {
 		painter.drawOval(fX,fY,fWidth,fHeight);
 	}
 }

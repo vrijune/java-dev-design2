@@ -33,4 +33,9 @@ public class ImageShape extends ictgradschool.industry.designpatternsii.ex01.Sha
         painter.drawImage(this.image, fX, fY, fWidth, fHeight);
 
     }
+
+    @Override
+    public void paintShape(Painter painter) {
+
+    }
 }

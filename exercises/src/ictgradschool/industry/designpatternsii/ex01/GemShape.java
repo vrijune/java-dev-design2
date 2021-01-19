@@ -43,12 +43,12 @@ public class GemShape extends ictgradschool.industry.designpatternsii.ex01.Shape
 	public GemShape(int x, int y, int deltaX, int deltaY, int width, int height) {
 		super(x,y,deltaX,deltaY,width,height);
 	}
-	
+
 	/**
 	 * Paints this GemShape object using the supplied Painter object.
 	 */
 	@Override
-	public void paint(Painter painter) {
+	public void paintShape(Painter painter) {
 
         Polygon polygon = new Polygon();
 
@@ -72,4 +72,6 @@ public class GemShape extends ictgradschool.industry.designpatternsii.ex01.Shape
         painter.drawPolygon(polygon);
 
 	}
+
+	
 }

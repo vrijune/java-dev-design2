@@ -49,4 +49,9 @@ public class RectangleShape extends Shape {
     public void paint(Painter painter) {
 		painter.drawRect(fX,fY,fWidth,fHeight);
 	}
+
+	@Override
+	public void paintShape(Painter painter) {
+
+	}
 }

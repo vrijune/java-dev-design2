@@ -1,5 +1,7 @@
 package ictgradschool.industry.designpatternsii.ex01;
 
+import java.awt.*;
+
 /**
  * Abstract superclass to represent the general concept of a ictgradschool.industry.lab15.ex01.Shape. This class
  * defines state common to all special kinds of ictgradschool.industry.lab15.ex01.Shape instances and implements
@@ -12,13 +14,13 @@ package ictgradschool.industry.designpatternsii.ex01;
 public abstract class Shape {
 	// === Constants for default values. ===
 	protected static final int DEFAULT_X_POS = 0;
-	
+
 	protected static final int DEFAULT_Y_POS = 0;
-	
+
 	protected static final int DEFAULT_DELTA_X = 5;
-	
+
 	protected static final int DEFAULT_DELTA_Y = 5;
-	
+
 	protected static final int DEFAULT_HEIGHT = 35;
 
 	protected static final int DEFAULT_WIDTH = 25;
@@ -36,7 +38,7 @@ public abstract class Shape {
 	protected int fWidth;
 
 	protected int fHeight;
-    // ===
+	// ===
 
 	/**
 	 * Creates a ictgradschool.industry.lab15.ex01.Shape object with default values for instance variables.
@@ -44,14 +46,14 @@ public abstract class Shape {
 	public Shape() {
 		this(DEFAULT_X_POS, DEFAULT_Y_POS, DEFAULT_DELTA_X, DEFAULT_DELTA_Y, DEFAULT_WIDTH, DEFAULT_HEIGHT);
 	}
-	
+
 	/**
 	 * Creates a ictgradschool.industry.lab15.ex01.Shape object with a specified x and y position.
 	 */
 	public Shape(int x, int y) {
 		this(x, y, DEFAULT_DELTA_X, DEFAULT_DELTA_Y, DEFAULT_WIDTH, DEFAULT_HEIGHT);
 	}
-	
+
 	/**
 	 * Creates a ictgradschool.industry.lab15.ex01.Shape instance with specified x, y, deltaX and deltaY values.
 	 * The ictgradschool.industry.lab15.ex01.Shape object is created with a default width and height.
@@ -72,12 +74,13 @@ public abstract class Shape {
 		fWidth = width;
 		fHeight = height;
 	}
-	
+
 	/**
 	 * Moves this ictgradschool.industry.lab15.ex01.Shape object within the specified bounds. On hitting a
 	 * boundary the ictgradschool.industry.lab15.ex01.Shape instance bounces off and back into the two-
-	 * dimensional world. 
-	 * @param width width of two-dimensional world.
+	 * dimensional world.
+	 *
+	 * @param width  width of two-dimensional world.
 	 * @param height height of two-dimensional world.
 	 */
 	public void move(int width, int height) {
@@ -104,8 +107,28 @@ public abstract class Shape {
 		fY = nextY;
 	}
 
-    /** Method to perform shape painting. */
-    public abstract void paint(Painter painter);
+	/**
+	 * Method to perform shape painting.
+	 */
+
+//	protected abstract void paintShape(Painter painter);
+//
+//	public abstract void paint(Painter painter);
+
+	public final void paint(Painter painter) {
+		paintShape(painter);
+		if (text != null) {
+			Color old = painter.getColor();
+			painter.setColor(textColor);
+			painter.drawCenteredText(text, fX, fY, fWidth, fHeight);
+			painter.setColor(old);
+		}
+	}
+
+	/** Hook method to perform shape painting. */
+	protected abstract void paintShape(Painter painter);
+
+
 
 	/**
 	 * Returns this ictgradschool.industry.lab15.ex01.Shape object's x position.
@@ -113,42 +136,42 @@ public abstract class Shape {
 	public int getX() {
 		return fX;
 	}
-	
+
 	/**
 	 * Returns this ictgradschool.industry.lab15.ex01.Shape object's y position.
 	 */
 	public int getY() {
 		return fY;
 	}
-	
+
 	/**
 	 * Returns this ictgradschool.industry.lab15.ex01.Shape object's speed and direction.
 	 */
 	public int getDeltaX() {
 		return fDeltaX;
 	}
-	
+
 	/**
 	 * Returns this ictgradschool.industry.lab15.ex01.Shape object's speed and direction.
 	 */
 	public int getDeltaY() {
 		return fDeltaY;
 	}
-	
+
 	/**
 	 * Returns this ictgradschool.industry.lab15.ex01.Shape's width.
 	 */
 	public int getWidth() {
 		return fWidth;
 	}
-	
+
 	/**
 	 * Returns this ictgradschool.industry.lab15.ex01.Shape's height.
 	 */
 	public int getHeight() {
 		return fHeight;
 	}
-	
+
 	/**
 	 * Returns a String whose value is the name of this class, not including the package name.
 	 * <p>To include the package name, use getName() instead of getSimpleName().</p>
@@ -156,4 +179,18 @@ public abstract class Shape {
 	public String toString() {
 		return getClass().getSimpleName();
 	}
+
+    public String text;
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public Color textColor = Color.BLACK;
+
+	public void setTextColor(Color textColor) {
+		this.textColor = textColor;
+	}
+
+
 }
