@@ -111,23 +111,26 @@ public abstract class Shape {
 	 * Method to perform shape painting.
 	 */
 
-//	protected abstract void paintShape(Painter painter);
-//
+	public abstract void paintShape(Painter painter);
+
 //	public abstract void paint(Painter painter);
 
+
+
+	/* Hook method to perform shape painting. */
 	public final void paint(Painter painter) {
 		paintShape(painter);
+
 		if (text != null) {
-			Color old = painter.getColor();
+			Color origin = painter.getColor();
 			painter.setColor(textColor);
 			painter.drawCenteredText(text, fX, fY, fWidth, fHeight);
-			painter.setColor(old);
+			painter.setColor(origin);
+
+
+
 		}
 	}
-
-	/** Hook method to perform shape painting. */
-	protected abstract void paintShape(Painter painter);
-
 
 
 	/**
@@ -180,11 +183,15 @@ public abstract class Shape {
 		return getClass().getSimpleName();
 	}
 
+
+
     public String text;
 
 	public void setText(String text) {
 		this.text = text;
 	}
+
+
 
 	public Color textColor = Color.BLACK;
 

@@ -99,7 +99,7 @@ public class DynamicRectangleShape extends RectangleShape {
      * Paints this ictgradschool.industry.lab15.ex01.RectangleShape object using the supplied ictgradschool.industry.lab15.ex01.Painter object.
      */
     @Override
-    public void paint(Painter painter) {
+    public void paintShape(Painter painter) {
 
         if (filled) {
             Color temp = painter.getColor();
@@ -110,6 +110,6 @@ public class DynamicRectangleShape extends RectangleShape {
             painter.setColor(temp);
         }
 
-        super.paint(painter);
+        super.paintShape(painter);
     }
 }

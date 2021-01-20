@@ -291,7 +291,7 @@ public class CourseDataManager {
 			oos.writeObject(new ArrayList<StudentResult>(Arrays.asList(results)));
 			oos.close();
 		} catch (IOException e) {
-			System.out.println("Error writing studetn result data.");
+			System.out.println("Error writing student result data.");
 		}
 	}
 

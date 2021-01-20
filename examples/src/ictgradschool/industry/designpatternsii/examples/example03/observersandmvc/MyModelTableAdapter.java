@@ -18,7 +18,7 @@ public class MyModelTableAdapter extends AbstractTableModel implements MyModelLi
     /** The model we're viewing in a {@link JTable} */
     private MyModel model;
 
-    /** Creates a new {@link MyModelTableAdapter} and adds a lisener to it so we can be notified of changes */
+    /** Creates a new {@link MyModelTableAdapter} and adds a listener to it so we can be notified of changes */
     public MyModelTableAdapter(MyModel model) {
         this.model = model;
         model.addListener(this);

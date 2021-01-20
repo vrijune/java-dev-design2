@@ -46,12 +46,7 @@ public class RectangleShape extends Shape {
 	 * Paints this ictgradschool.industry.lab15.ex01.RectangleShape object using the supplied ictgradschool.industry.lab15.ex01.Painter object.
 	 */
 	@Override
-    public void paint(Painter painter) {
+    public void paintShape(Painter painter) {
 		painter.drawRect(fX,fY,fWidth,fHeight);
-	}
-
-	@Override
-	public void paintShape(Painter painter) {
-
 	}
 }
